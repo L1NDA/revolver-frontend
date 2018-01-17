@@ -33,11 +33,10 @@ class Form extends Component {
     const value = e.target.value;
     // console.log(name);
     // console.log(value)
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       this.validateField(name, value);
-      return false;
-      // console.log("enter")
+      // return false;
     }
   }
 
@@ -49,24 +48,21 @@ class Form extends Component {
     switch(fieldName) {
       case 'email':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+        // fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+        this.setState({emailValid: emailValid, emailOutline: !emailValid})
         break;
       case 'password':
         passwordValid = value.match(/gillevi89/g);
-        fieldValidationErrors.password = passwordValid ? '': ' is invalid';
+        // fieldValidationErrors.password = passwordValid ? '': ' is invalid';
+        this.setState({passwordValid: passwordValid, passOutline: !passwordValid})
         break;
       default:
         break;
     }
-    if (passwordValid) {
-      document.location.href = "admin"
-    }
-    this.setState({formErrors: fieldValidationErrors,
-                    emailValid: emailValid,
-                    passwordValid: passwordValid,
-                    emailOutline: !emailValid,
-                    passOutline: !passwordValid
-                  }, this.validateForm);
+    // if (passwordValid) {
+    //   document.location.href = "admin"
+    // }
+    this.setState({formErrors: fieldValidationErrors}, this.validateForm);
   }
 
   validateForm() {
@@ -78,22 +74,22 @@ class Form extends Component {
   }
 
   render () {
-    var passClasses = classNames({
-      // fadeIn: this.state.emailValid,
-      // fadeOut: !this.state.emailValid,
-      formControl: true,
-      formColor: this.state.passOutline
-    });
-
     var emailClasses = classNames ({
       formColor: this.state.emailOutline,
       formControl: true
     })
 
+    var passClasses = classNames({
+      fadeIn: this.state.emailValid,
+      fadeOut: !this.state.emailValid,
+      formControl: true,
+      formColor: this.state.passOutline
+    });
+
     var submitClasses = classNames ({
-      // fadeIn: this.state.passwordValid,
-      // fadeOut: !this.state.passwordValid,
-      btn: true
+      btn: true,
+      fadeIn: this.state.passwordValid,
+      fadeOut: !this.state.passwordValid,
     })
 
     return (
@@ -101,7 +97,7 @@ class Form extends Component {
         <input type="email" required className={emailClasses} name="email" placeholder="EMAIL" onKeyPress={this.handleKeyPress}  />
         <input type="password" className={passClasses} name="password" placeholder="PASSWORD" onKeyPress={this.handleKeyPress}  />
         <div></div>
-        <button type="button" href="admin" className={submitClasses}>LOGIN</button>
+        <a href="admin" className={submitClasses}>LOGIN</a>
       </form>
     )
   }

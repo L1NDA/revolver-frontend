@@ -31,7 +31,7 @@ body {
 }
 
 .form {
-  margin-top: 45vh;
+  margin-top: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,19 +66,32 @@ body {
 .btn {
   background-color: #0ed3cd;
   color: white;
-  padding: 10px 0;
+  padding: 12px 0;
   margin: 20px;
   font-family: 'Proxima Nova', sans-serif;
   width: 150px;
   border-radius: 5px;
   letter-spacing: 2px;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
+
+.btn:focus{
+  outline: none
 }
 
 /* bottom */
 
 .fadeOut{
-     opacity:0;
+     opacity:0 !important;
      /* width:0;
      height:0; */
      transition: opacity 0.5s;
