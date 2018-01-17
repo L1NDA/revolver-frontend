@@ -1,0 +1,28 @@
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.homepage {
+  background-color: blue;
+  height: 100%;
+  width: 100%;
+}
