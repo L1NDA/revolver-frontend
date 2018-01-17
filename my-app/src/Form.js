@@ -93,7 +93,7 @@ class Form extends Component {
     })
 
     return (
-      <form className="form" novalidate>
+      <form className="form" noValidate>
         <input type="email" required className={emailClasses} name="email" placeholder="EMAIL" onKeyPress={this.handleKeyPress}  />
         <input type="password" className={passClasses} name="password" placeholder="PASSWORD" onKeyPress={this.handleKeyPress}  />
         <div></div>
