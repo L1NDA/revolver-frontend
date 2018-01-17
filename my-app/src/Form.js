@@ -31,16 +31,12 @@ class Form extends Component {
   handleKeyPress = (e) => {
     const name = e.target.name;
     const value = e.target.value;
+    this.validateField(name, value, e);
     // console.log(name);
     // console.log(value)
-    if (e.key === "Enter") {
-      e.preventDefault();
-      this.validateField(name, value);
-      // return false;
-    }
   }
 
-  validateField(fieldName, value) {
+  validateField(fieldName, value, e) {
     let fieldValidationErrors = this.state.formErrors;
     let emailValid = this.state.emailValid;
     let passwordValid = this.state.passwordValid;
@@ -49,12 +45,18 @@ class Form extends Component {
       case 'email':
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
         // fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-        this.setState({emailValid: emailValid, emailOutline: !emailValid})
+        this.setState({emailValid: emailValid})
+        if (e.key === "Enter") {
+          this.setState({emailOutline: !emailValid})
+        }
         break;
       case 'password':
         passwordValid = value.match(/gillevi89/g);
         // fieldValidationErrors.password = passwordValid ? '': ' is invalid';
-        this.setState({passwordValid: passwordValid, passOutline: !passwordValid})
+        this.setState({passwordValid: passwordValid})
+        if (value.length > 1) {
+          this.setState({passOutline: !passwordValid})
+        }
         break;
       default:
         break;
@@ -81,15 +83,17 @@ class Form extends Component {
 
     var passClasses = classNames({
       fadeIn: this.state.emailValid,
-      fadeOut: !this.state.emailValid,
+      // hidden: !this.state.emailValid,
+      // fadeOut: !this.state.emailValid,
       formControl: true,
       formColor: this.state.passOutline
     });
 
     var submitClasses = classNames ({
       btn: true,
-      fadeIn: this.state.passwordValid,
-      fadeOut: !this.state.passwordValid,
+      // hidden: !this.state.passwordValid,
+      // fadeOut: !this.state.passwordValid,
+      disabled: !this.state.passwordValid
     })
 
     return (
