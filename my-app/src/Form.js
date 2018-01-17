@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
+import classNames from "classnames";
 // import './Form.css';
 
 class Form extends Component {
@@ -11,15 +12,33 @@ class Form extends Component {
       formErrors: {email: '', password: ''},
       emailValid: false,
       passwordValid: false,
-      formValid: false
+      formValid: false,
+      emailOutline: false,
+      passOutline: false
     }
   }
 
-  handleUserInput = (e) => {
+  // handleKeyPress = (e) => {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+  //   this.setState({[name]: value});
+  //   if (e.key === "Enter") {
+  //     () => { this.validateField(name, value) };
+  //   }
+  //
+  // }
+
+  handleKeyPress = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    this.setState({[name]: value},
-                  () => { this.validateField(name, value) });
+    // console.log(name);
+    // console.log(value)
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      this.validateField(name, value);
+      return false;
+      // console.log("enter")
+    }
   }
 
   validateField(fieldName, value) {
@@ -33,15 +52,20 @@ class Form extends Component {
         fieldValidationErrors.email = emailValid ? '' : ' is invalid';
         break;
       case 'password':
-        passwordValid = value.length >= 6;
-        fieldValidationErrors.password = passwordValid ? '': ' is too short';
+        passwordValid = value.match(/gillevi89/g);
+        fieldValidationErrors.password = passwordValid ? '': ' is invalid';
         break;
       default:
         break;
     }
+    if (passwordValid) {
+      document.location.href = "admin"
+    }
     this.setState({formErrors: fieldValidationErrors,
                     emailValid: emailValid,
-                    passwordValid: passwordValid
+                    passwordValid: passwordValid,
+                    emailOutline: !emailValid,
+                    passOutline: !passwordValid
                   }, this.validateForm);
   }
 
@@ -54,25 +78,45 @@ class Form extends Component {
   }
 
   render () {
+    var passClasses = classNames({
+      // fadeIn: this.state.emailValid,
+      // fadeOut: !this.state.emailValid,
+      formControl: true,
+      formColor: this.state.passOutline
+    });
+
+    var emailClasses = classNames ({
+      formColor: this.state.emailOutline,
+      formControl: true
+    })
+
+    var submitClasses = classNames ({
+      // fadeIn: this.state.passwordValid,
+      // fadeOut: !this.state.passwordValid,
+      btn: true
+    })
+
     return (
-      <form className="Form">
-        <FormErrors formErrors={this.state.formErrors} />
-        <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
-          <input type="email" required className="form-control" name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onEnter={this.handleUserInput}  />
-        </div>
-        <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-          <input type="password" className="form-control" name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleUserInput}  />
-        </div>
-        <button type="submit" className="btn btn-primary" disabled={!this.state.formValid}>Sign up</button>
+      <form className="form" novalidate>
+        <input type="email" required className={emailClasses} name="email" placeholder="EMAIL" onKeyPress={this.handleKeyPress}  />
+        <input type="password" className={passClasses} name="password" placeholder="PASSWORD" onKeyPress={this.handleKeyPress}  />
+        <div></div>
+        <button type="button" href="admin" className={submitClasses}>LOGIN</button>
       </form>
     )
   }
 }
 
 export default Form;
+
+// <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
+// <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
+//   <input type="password" className="form-control" name="password" placeholder="Password" onKeyPress={this.handleKeyPress}  />
+// </div>
+
+  //{this.state.passwordValid &&
+  //     <button type="submit" className="btn btn-primary" disabled={!this.state.passwordValid}>Sign up</button>
+  // }
+
+// <FormErrors formErrors={this.state.formErrors} />
+  // <a href="google.com"><div type="submit" className="btn" disabled={!this.state.passwordValid}>Log In</div></a>
