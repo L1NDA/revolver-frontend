@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Logo from "./Logo.js";
 import './App.css';
 import Form from './Form.js';
+// import Home from './Home.js';
+import Admin from './Admin.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
       <div className="homepage">
-        <Form/>
+        <Logo/>
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Form}/>
+            <Route path="/admin" component={Admin}/>
+          </Switch>
+        </Router>
       </div>
+
     );
   }
 }

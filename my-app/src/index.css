@@ -89,6 +89,17 @@ body {
   outline: none
 }
 
+.logo {
+  width: 175px;
+  object-fit: contain;
+}
+
+.logo-container {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
 /* bottom */
 
 .fadeOut{

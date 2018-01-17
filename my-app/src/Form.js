@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
 import classNames from "classnames";
 // import './Form.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
+import Admin from "./Admin.js";
 
 class Form extends Component {
   constructor (props) {
@@ -97,12 +104,13 @@ class Form extends Component {
     })
 
     return (
-      <form className="form" noValidate>
-        <input type="email" required className={emailClasses} name="email" placeholder="EMAIL" onKeyPress={this.handleKeyPress}  />
-        <input type="password" className={passClasses} name="password" placeholder="PASSWORD" onKeyPress={this.handleKeyPress}  />
-        <div></div>
-        <a href="admin" className={submitClasses}>LOGIN</a>
-      </form>
+      <Router>
+          <form className="form" noValidate>
+            <input type="email" required className={emailClasses} name="email" placeholder="EMAIL" onKeyPress={this.handleKeyPress}  />
+            <input type="password" className={passClasses} name="password" placeholder="PASSWORD" onKeyPress={this.handleKeyPress}  />
+            <a href="/admin" className={submitClasses}>LOGIN</a>
+          </form>
+      </Router>
     )
   }
 }
@@ -120,3 +128,5 @@ export default Form;
 
 // <FormErrors formErrors={this.state.formErrors} />
   // <a href="google.com"><div type="submit" className="btn" disabled={!this.state.passwordValid}>Log In</div></a>
+
+  // <Link to="/admin" className={submitClasses}>LOGIN</Link>
