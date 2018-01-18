@@ -32,8 +32,7 @@ body {
 
 .grid {
   /* display: grid; */
-  width: 75%;
-  height: 75%;
+  width: 1000px;
   margin-bottom: 25px;
 }
 
@@ -48,6 +47,11 @@ body {
   text-align: center;
 
 }
+
+.polar {
+  /* padding: 10px; */
+}
+
 .transparent {
 
   background-color: black;

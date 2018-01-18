@@ -8,6 +8,7 @@ import {
 import PropTypes from 'prop-types';
 import "./admin.css";
 
+
 class Widget extends Component {
   constructor (props) {
     super(props);
@@ -32,7 +33,7 @@ class Widget extends Component {
     if (this.props.color) {
         this.spanStyles.backgroundColor = this.props.color;
     }
-    
+
   }
 
   // const spanStyles = {
@@ -46,7 +47,7 @@ class Widget extends Component {
 
     return (
         <div className={widget1} style={ this.spanStyles }>
-
+          
         </div>
     )
   }
