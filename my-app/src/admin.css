@@ -25,7 +25,8 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  margin-top: 15vh;
   justify-content: center;
 }
 
@@ -38,5 +39,34 @@ body {
 
 .widget {
   margin: 0px;
-  background-color: blue
+  border-radius: 5px;
+
+}
+.widget h3{
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+
+}
+.transparent {
+
+  background-color: black;
+}
+.graphcoloring {
+
+  background-color: #A3E5C6;
+}
+.statscoloring {
+
+  background-color: #4826C4;
+}
+.mapcoloring {
+  background-color: #2995B5;
+}
+.reportcoloring {
+  background-color: #328B79;
+}
+.titleAndSearch{
+  color: white;
+  background-color: blue;
 }
