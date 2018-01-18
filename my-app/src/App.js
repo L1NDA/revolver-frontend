@@ -10,6 +10,8 @@ import {
   Link,
   Switch
 } from 'react-router-dom'
+import "./css/react-grid-layout-styles.css";
+import "./css/react-resizable-styles.css";
 
 class App extends Component {
   render() {

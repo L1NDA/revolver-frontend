@@ -29,9 +29,10 @@ class Widget extends Component {
       this.spanStyles.gridRow
       = `span ${props.rowspan}`;
     }
-  if (this.props.color) {
-      this.spanStyles.backgroundColor = this.props.color;
-  }
+    if (this.props.color) {
+        this.spanStyles.backgroundColor = this.props.color;
+    }
+    
   }
 
   // const spanStyles = {
