@@ -20,3 +20,22 @@ body {
   height: 100%;
   width: 100%;
 }
+
+.admin {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  width: 75%;
+  height: 75%;
+  margin-bottom: 25px;
+}
+
+.widget {
+  /* background-color: blue; */
+}

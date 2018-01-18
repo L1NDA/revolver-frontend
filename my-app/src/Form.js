@@ -53,7 +53,7 @@ class Form extends Component {
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
         // fieldValidationErrors.email = emailValid ? '' : ' is invalid';
         this.setState({emailValid: emailValid})
-        if (e.key === "Enter") {
+        if (value.length > 1) {
           this.setState({emailOutline: !emailValid})
         }
         break;
