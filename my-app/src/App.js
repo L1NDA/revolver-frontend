@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom'
 import "./css/react-grid-layout-styles.css";
 import "./css/react-resizable-styles.css";
+// import Globe from './Globe.js'
 
 class App extends Component {
   render() {
@@ -25,7 +26,6 @@ class App extends Component {
           </Switch>
         </Router>
       </div>
-
     );
   }
 }
