@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FormErrors } from './FormErrors';
 import classNames from "classnames";
+import Globe from './Globe.js'
 // import './Form.css';
 import {
   BrowserRouter as Router,
@@ -105,11 +106,18 @@ class Form extends Component {
 
     return (
       <Router>
-          <form className="form" noValidate>
-            <input type="email" required className={emailClasses} name="email" placeholder="EMAIL" onKeyPress={this.handleKeyPress}  />
-            <input type="password" className={passClasses} name="password" placeholder="PASSWORD" onKeyPress={this.handleKeyPress}  />
-            <a href="/admin" className={submitClasses}>LOGIN</a>
-          </form>
+        <switch>
+          <div>
+            <form className="form" noValidate>
+              <input type="email" required className={emailClasses} name="email" placeholder="EMAIL" onKeyPress={this.handleKeyPress}  />
+              <input type="password" className={passClasses} name="password" placeholder="PASSWORD" onKeyPress={this.handleKeyPress}  />
+              <a href="/admin" className={submitClasses}>LOGIN</a>
+            </form>
+          </div>
+          <div className="globe">
+            <Globe />
+          </div>
+        </switch>
       </Router>
     )
   }
