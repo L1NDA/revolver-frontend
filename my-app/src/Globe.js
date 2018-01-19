@@ -12,9 +12,9 @@ var DAT = {};
 DAT.Globe = function(container, opts) {
   opts = opts || {};
   
-  var colorFn = opts.colorFn || function(x) {
+  var colorFn = colorFn || function(x) {
     var c = new THREE.Color();
-    c.setHSL( ( 0.6 - ( x * 0.5 ) ), 1.0, 0.5 );
+    c.setHSL( ( 0.6 - ( x * 0.5 ) ), 1.0, 1.0 );
     return c;
   };
 
@@ -160,6 +160,13 @@ DAT.Globe = function(container, opts) {
     }, false);
 
     zoom(-100);
+
+    setInterval(spin, 10);
+
+  }
+
+  function spin() {
+    target.x += .002;
   }
 
   function addData(data, opts) {
@@ -178,6 +185,10 @@ DAT.Globe = function(container, opts) {
       throw('error: format not supported: '+opts.format);
     }
 
+    // start: #hsla(238, 100%, 83%, 1)
+    //end : #43f7dd
+    //hsla(171, 92%, 62%, 1)
+
     if (opts.animated) {
       if (this._baseGeometry === undefined) {
         this._baseGeometry = new THREE.Geometry();
@@ -185,7 +196,8 @@ DAT.Globe = function(container, opts) {
           lat = data[i];
           lng = data[i + 1];
 //        size = data[i + 2];
-          color = colorFnWrapper(data,i);
+          color = new THREE.Color(255, 100, 100);
+          color.setHSL(0.5 + ( size * 0.2 ),1,0.6);
           size = 0;
           addPoint(lat, lng, size, color, this._baseGeometry);
         }
@@ -201,8 +213,9 @@ DAT.Globe = function(container, opts) {
     for (i = 0; i < data.length; i += step) {
       lat = data[i];
       lng = data[i + 1];
-      color = colorFnWrapper(data,i);
       size = data[i + 2];
+      color = new THREE.Color();
+      color.setHSL(0.5 + ( size * 0.2 ),1,0.6);
       size = size*200;
       addPoint(lat, lng, size, color, subgeo);
     }
@@ -340,8 +353,8 @@ DAT.Globe = function(container, opts) {
 
   function zoom(delta) {
     distanceTarget -= delta;
-    distanceTarget = distanceTarget > 1250 ? 1250 : distanceTarget;
-    distanceTarget = distanceTarget < 350 ? 350 : distanceTarget;
+    distanceTarget = distanceTarget > 1200 ? 1200 : distanceTarget;
+    distanceTarget = distanceTarget < 500 ? 500 : distanceTarget;
   }
 
   function animate() {
