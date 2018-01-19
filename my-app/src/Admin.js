@@ -14,6 +14,7 @@ import ReactGridLayout from "react-grid-layout";
 import "./css/react-grid-layout-styles.css";
 import "./css/react-resizable-styles.css";
 import Donut from "./Donut.js";
+import Map from "./Map.js"
 
 class Admin extends Component {
   constructor (props) {
@@ -84,6 +85,7 @@ class Admin extends Component {
 
             <div key="Map"   className={mapColor}>
               <h3 className={label}>MAP</h3>
+              <Map />
             </div>
             <div key="Polar"   className={polar}>
               <Donut/>
