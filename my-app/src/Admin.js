@@ -65,7 +65,7 @@ class Admin extends Component {
     var layout = [
       {i: 'Graph', x: 3, y: 5, w: 7, h: 3, minW: 2, minH: 2},
       {i: 'Stats', x: 8, y: 0, w: 2, h: 3, minW: 2, minH: 2},
-      {i: 'Twitter', x: 0, y: 3, w: 3, h: 5, minW: 3, minH: 5, maxW: 3, maxH: 5},
+      {i: 'Twitter', x: 0, y: 3, w: 3, h: 4, minW: 3, minH: 4, maxW: 3, maxH: 5},
       {i: 'Map', x: 3, y: 0, w: 5, h: 4, minW: 4, minH: 4},
       {i: 'Polar', x: 0, y: 0, w: 3, h: 3, minW: 2, minH: 2},
       {i: 'Report', x: 8, y: 2, w: 2, h: 1, minW: 2, minH: 1},
