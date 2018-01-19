@@ -53,6 +53,10 @@ class Admin extends Component {
       polar: true
     })
 
+    var label = classNames ({
+      label: true
+    })
+
     var layout = [
       {i: 'Graph', x: 0, y: 4, w: 7, h: 3, minW: 2, minH: 2},
       {i: 'Stats', x: 7, y: 0, w: 3, h: 2, minW: 2, minH: 2},
@@ -66,26 +70,26 @@ class Admin extends Component {
     return (
         <div className="admin">
           <ReactGridLayout margin={[25,25]} className="grid" layout={layout} cols={10} rowHeight={75} width={1000}>
-          <div key="Title"   className={title}>
+          <div key="Title"   className={label}>
             City Name
           </div>
             <div key="Stats"   className={statsColor}>
-              <h3>STATS</h3>
+              <h3 className={label}>STATS</h3>
             </div>
             <div key="Graph" className={graphColor}>
-              <h3>GRAPH</h3>
+              <h3 className={label}>GRAPH</h3>
             </div>
 
             <div key="Twitter" className={twitter}><Widget0/></div>
 
             <div key="Map"   className={mapColor}>
-              <h3>MAP</h3>
+              <h3 className={label}>MAP</h3>
             </div>
             <div key="Polar"   className={polar}>
               <Donut/>
             </div>
             <div key="Report"   className={reportColor}>
-              <h3>REPORT UNREST</h3>
+              <h3 className={label}>REPORT UNREST</h3>
             </div>
           </ReactGridLayout>
         </div>
