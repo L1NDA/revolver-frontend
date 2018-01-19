@@ -109,7 +109,8 @@ class Graph extends Component {
         display: true,
         text: this.state.current,
         fontColor: "#43F7DD",
-        fontSize: 16
+        fontSize: 16,
+        position: "right"
       },
         legend: {display: false},
         maintainAspectRatio: false,
