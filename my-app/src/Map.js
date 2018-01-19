@@ -1,5 +1,6 @@
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import React, {Component} from 'react' 
+var map_src = require('./map.png');
 
 export class MapContainer extends Component {
 
@@ -11,8 +12,15 @@ export class MapContainer extends Component {
       }
 
     render() {
+        const style = `
+            user-select: false;
+            
+        `
+
         return (
-            <Map google={window.google} width="80%" />
+            <div>
+                <img src={map_src} width="100%" height="100%" onclick="return false"/>
+            </div>
         );
     }
 }
