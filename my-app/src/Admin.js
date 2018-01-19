@@ -4,7 +4,6 @@ import classNames from "classnames";
 import "./admin.css";
 import Widget from "./Widgets.jsx";
 import Twitter from "./Twitter.jsx";
-import donutexample from "./img/donutexample.png"
 import {
   BrowserRouter as Router,
   Route,

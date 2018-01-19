@@ -133,7 +133,8 @@ body {
 
 .reportcoloring h3 {
   text-align: center;
-  line-height: 30px;
+  line-height: 22px;
+  font-size: 16px;
 }
 
 .reportcoloring:hover {
