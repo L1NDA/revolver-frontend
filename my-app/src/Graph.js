@@ -83,12 +83,12 @@ class Graph extends Component {
     ]
   });
 
-  getName() {
-    var hashtags = ["#michaelbrown", "#policebrutality", "#blacklivesmatter", "#wrongfulkilling", "#handsupdontshoot", "#stoppoliceviolence", "#humanrights", "#mikebrown"];
-    this.state.current = hashtags[this.getRandomInt(0,7)];
-    // console.log(current);
-    // return current;
-  }
+  // getName() {
+  //   var hashtags = ["#michaelbrown", "#policebrutality", "#blacklivesmatter", "#wrongfulkilling", "#handsupdontshoot", "#stoppoliceviolence", "#humanrights", "#mikebrown"];
+  //   this.state.current = hashtags[this.getRandomInt(0,7)];
+  //   // console.log(current);
+  //   // return current;
+  // }
 
   getInitialState() {
 		return this.getState();
@@ -98,15 +98,15 @@ class Graph extends Component {
 		setInterval(() => {
 			this.setState(this.getState());
 		}, 2000);
-    setInterval(() => {
-			this.setState(this.getName());
-		}, 2000);
+    // setInterval(() => {
+		// 	this.setState(this.getName());
+		// }, 2000);
 	}
 
   render () {
     const options = {
       title: {
-        display: true,
+        display: false,
         text: this.state.current,
         fontColor: "white",
         fontSize: 16,
