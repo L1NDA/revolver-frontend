@@ -6,7 +6,7 @@ class Graph extends Component {
   constructor (props) {
     super(props);
     this.state = {
-
+      current: ""
     }
   }
 
@@ -83,6 +83,13 @@ class Graph extends Component {
     ]
   });
 
+  getName() {
+    var hashtags = ["#MichaelBrown", "#Ferguson", "#PoliceBrutality", "#BlackLivesMatter", "#WrongfulKilling", "#Handsupdontshoot"];
+    this.state.current = hashtags[this.getRandomInt(0,4)];
+    // console.log(current);
+    // return current;
+  }
+
   getInitialState() {
 		return this.getState();
 	}
@@ -91,10 +98,19 @@ class Graph extends Component {
 		setInterval(() => {
 			this.setState(this.getState());
 		}, 3000);
+    setInterval(() => {
+			this.setState(this.getName());
+		}, 3000);
 	}
 
   render () {
     const options = {
+      title: {
+        display: true,
+        text: this.state.current,
+        fontColor: "#43F7DD",
+        fontSize: 16
+      },
         legend: {display: false},
         maintainAspectRatio: false,
         responsive: true,
