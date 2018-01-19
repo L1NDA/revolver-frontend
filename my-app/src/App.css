@@ -19,16 +19,47 @@ html, body {
 .aboutPage{
   position: absolute;
   left: 370px;
-  top: 300px;
-  background-color: darkgray;
+  top: 100px;
+  background-color: #1d1d1e;
+  border: 1px solid white;
+  box-shadow: 0px 3px 19px 0px rgba(225,225,225, 0.25);
   color: white;
   font-family: 'Proxima Nova', sans-serif;
   width: 600px;
-  padding: 10px;
+  padding-bottom: 15px;
+
 }
 .aboutPage h3{
-  text-align: center;
+  font-weight: 100;
+
+  letter-spacing: 5px;
+  text-align: left;
+  padding-left: 15px;
+  line-height: 18px;
+
+}
+.aboutPage p{
+  padding-left: 15px;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 100;
+
 }
 .closeDiv{
+  text-align: right;
+  margin-top: 2px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.closeDiv p{
+  font-size: 20px;
+}
+.teamPic {
+  width: 150px;
+}
+.imgRow{
   text-align: center;
+}
+.imgRow img{
+  margin: 10px;
 }
