@@ -172,9 +172,13 @@ body {
 .aboutDiv a{
   color: white;
   text-decoration: none;
+  font-size: 18px;
     font-family: 'Proxima Nova', sans-serif;
     letter-spacing: 3px;
     position: absolute;
     bottom: 25px;
     right: 40px;
+}
+.aboutDiv a:hover{
+  text-decoration: none;
 }

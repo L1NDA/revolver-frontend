@@ -17,8 +17,9 @@ html, body {
   margin: 0;
 }
 .aboutPage{
+  z-index: 100;
   position: absolute;
-  left: 370px;
+  left: 360px;
   top: 100px;
   background-color: #1d1d1e;
   border: 1px solid white;
