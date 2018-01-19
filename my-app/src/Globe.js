@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import globe_background from './globe/ce.png'
 import world_jpg from './globe/world.jpg'
-
-var THREE = require('three')
+var THREE = require('three');
 
 var json = require('./globe/search.json')
 
@@ -11,7 +10,7 @@ var DAT = {};
 
 DAT.Globe = function(container, opts) {
   opts = opts || {};
-  
+
   var colorFn = colorFn || function(x) {
     var c = new THREE.Color();
     c.setHSL( ( 0.6 - ( x * 0.5 ) ), 1.0, 1.0 );
@@ -529,7 +528,7 @@ export default class Globe extends Component {
     }
 
     componentDidMount() {
-      
+
       var globe = DAT.Globe(document.getElementById('container'), {
         colorFn: function(label) {
            return new THREE.Color([
@@ -540,10 +539,10 @@ export default class Globe extends Component {
              0xe6b23a, 0x7ed3f7][label]);
         }
       });
-    
+
 
       // var data = JSON.parse(json);
-      
+
       var data = json;
       window.data = data;
       globe.addData(data, {format: 'legend'});
@@ -558,6 +557,3 @@ export default class Globe extends Component {
 
     }
 }
-
-
-

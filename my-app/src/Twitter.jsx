@@ -12,7 +12,7 @@ import {
 import PropTypes from 'prop-types';
 import "./admin.css";
 
-class Widget0 extends Component {
+class Twitter extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -48,10 +48,6 @@ class Widget0 extends Component {
       showing: true
     })
 
-
-
-
-
     return (
 
 
@@ -62,7 +58,7 @@ class Widget0 extends Component {
       id: '954013750322966529'
     }}
     options={{
-
+      theme: "dark",
       height: '500px'
 
     }}
@@ -75,16 +71,16 @@ class Widget0 extends Component {
   }
 }
 
-export default Widget0;
+export default Twitter;
 
-Widget0.defaultProps = {
+Twitter.defaultProps = {
   heading: "Unnamed Widget",
   colspan: 1,
   rowspan: 1,
   color: "blue"
 }
 
-Widget0.propTypes = {
+Twitter.propTypes = {
   heading: PropTypes.string,
   colspan: PropTypes.number,
   rowspan: PropTypes.number,

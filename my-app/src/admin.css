@@ -26,8 +26,11 @@ body {
   width: 100%;
   display: flex;
   align-items: flex-start;
-  margin-top: 15vh;
+  padding-top: 7vh;
+  padding-bottom: 7vh;
   justify-content: center;
+  overflow:auto;
+  /* background-image: url("./img/hacker.gif"); */
 }
 
 .grid {
@@ -37,45 +40,118 @@ body {
 }
 
 .widget {
-  margin: 0px;
-  border-radius: 5px;
-
+  border-radius: 0px;
+  padding: 0 20px;
+  transition: all 0.5s;
 }
-.widget h3{
-  color: white;
-  letter-spacing: 1px;
-  text-align: center;
 
+.widgetnopad {
+  padding: 0px;
+}
+
+.widget h3 {
+  /* color: white; */
+  letter-spacing: 5px;
+  text-align: left;
+  font-weight: 100;
+}
+
+.widget h2 {
+  letter-spacing: 7px;
+  text-align: left;
+  font-weight: 100;
+  color: white;
+  font-size: 18px;
 }
 
 .polar {
-  /* padding: 10px; */
+  /* padding: 1px; */
 }
 
-.transparent {
-
-  background-color: black;
-}
-.graphcoloring {
-
-  background-color: #A3E5C6;
+.twittercoloring {
+  /* box-shadow: 0px 3px 19px 0px rgba(105,191,255, 0.5); */
 }
 .statscoloring {
+  background-color: rgba(168,171,255, 0.05);
+  border: 1px solid #A8ABFF;
+  color: #A8ABFF;
+  box-shadow: 0px 3px 19px 0px rgba(168,171,255, 0.5);
+}
 
-  background-color: #4826C4;
+.statscoloring:hover {
+  background-color: rgba(168,171,255, 0.1);
+  cursor: pointer;
 }
+
+.graphcoloring {
+  background-color: rgba(67,247,221, 0.05);
+  border: 1px solid #43F7DD;
+  color: #43F7DD;
+  box-shadow: 0px 3px 19px 0px rgba(67,247,221, 0.5);
+}
+
+.graphcoloring:hover {
+  background-color: rgba(67,247,221, 0.1);
+  cursor: pointer;
+}
+
 .mapcoloring {
-  background-color: #2995B5;
+  background-color: rgba(105,191,255, 0.05);
+  border: 1px solid #69BFFF;
+  color: #69BFFF;
+  box-shadow: 0px 3px 19px 0px rgba(105,191,255, 0.5);
 }
+
+.mapcoloring:hover {
+  background-color: rgba(105,191,255, 0.1);
+  cursor: pointer;
+}
+
 .reportcoloring {
-  background-color: #328B79;
+  background-color: rgba(168,171,255, 0.05);
+  border: 1px solid #A8ABFF;
+  color: #A8ABFF;
+  box-shadow: 0px 3px 19px 0px rgba(168,171,255, 0.5);
+  transition: all 0.5s;
 }
+
+.reportcoloring:hover {
+  background-color: rgba(255,66,66, 0.05);
+  border: 1px solid #FF4242;
+  color: #FF4242;
+  box-shadow: 0px 3px 19px 0px rgba(255,66,66, 0.5);
+  cursor: pointer;
+}
+
 .titleAndSearch{
-  color: white;
-  background-color: blue;
+  color: black;
+  background-color: rgba(225,225,225, 0.05);
+  box-shadow: 0px 3px 19px 0px rgba(225,225,225, 0.25);
+  /* border-radius: 0; */
+  /* box-shadow: 0px 5px 20px 2px rgba(255,255,255,0.3); */
+  /* background-color: rgba(255, 255, 255, 0.05); */
+  /* Twitter: background-color: #2A2F33; */
+  /* box-shadow: 0px 3px 19px 0px rgba(255,255,255, 0.4); */
+  border: 1px solid white;
+  padding: 0 35px;
+  display: flex;
+  align-items: center;
+}
+
+.titleAndSearch:hover {
+  background-color: rgba(225,225,225, 0.1);
+  cursor: pointer;
+}
+
+.titleOverlay {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 241;
 }
 
 .label {
-  pointer-events: none;
+  /* pointer-events: none; */
   user-select: none;
 }

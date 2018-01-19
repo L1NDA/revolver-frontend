@@ -3,7 +3,7 @@ import { FormErrors } from './FormErrors';
 import classNames from "classnames";
 import "./admin.css";
 import Widget from "./Widgets.jsx";
-import Widget0 from "./Widgets0.jsx";
+import Twitter from "./Twitter.jsx";
 import donutexample from "./img/donutexample.png"
 import {
   BrowserRouter as Router,
@@ -14,7 +14,10 @@ import ReactGridLayout from "react-grid-layout";
 import "./css/react-grid-layout-styles.css";
 import "./css/react-resizable-styles.css";
 import Donut from "./Donut.js";
-import Map from "./Map.js"
+import Logo from "./Logo.js"
+import Graph from "./Graph.js"
+import Map from "./Map.js";
+// import gif from "./img/hacker-35.gif";
 
 class Admin extends Component {
   constructor (props) {
@@ -31,7 +34,8 @@ class Admin extends Component {
     })
     var twitter = classNames ({
       widget: true,
-      transparent: true
+      twittercoloring: true,
+      widgetnopad: true
     })
     var graphColor = classNames ({
       widget: true,
@@ -47,7 +51,8 @@ class Admin extends Component {
     })
     var title = classNames ({
       widget: true,
-      titleAndSearch: true
+      titleAndSearch: true,
+      label: true
     })
     var polar = classNames ({
       widget: true,
@@ -59,29 +64,31 @@ class Admin extends Component {
     })
 
     var layout = [
-      {i: 'Graph', x: 0, y: 4, w: 7, h: 3, minW: 2, minH: 2},
-      {i: 'Stats', x: 7, y: 0, w: 3, h: 2, minW: 2, minH: 2},
-      {i: 'Twitter', x: 7, y: 3, w: 3, h: 5, minW: 3, minH: 5, maxW: 3, maxH: 5},
-      {i: 'Map', x: 2, y: 0, w: 5, h: 4, minW: 4, minH: 4},
-      {i: 'Polar', x: 0, y: 2, w: 2, h: 2, minW: 2, minH: 2},
-      {i: 'Report', x: 0, y: 0, w: 2, h: 2, minW: 2, minH: 2},
+      {i: 'Graph', x: 3, y: 5, w: 7, h: 3, minW: 2, minH: 2},
+      {i: 'Stats', x: 0, y: 0, w: 3, h: 2, minW: 2, minH: 2},
+      {i: 'Twitter', x: 0, y: 3, w: 3, h: 5, minW: 3, minH: 5, maxW: 3, maxH: 5},
+      {i: 'Map', x: 3, y: 0, w: 5, h: 4, minW: 4, minH: 4},
+      {i: 'Polar', x: 8, y: 0, w: 2, h: 2, minW: 2, minH: 2},
+      {i: 'Report', x: 8, y: 2, w: 2, h: 2, minW: 2, minH: 2},
       {i: 'Title', x: 0, y: 0, w: 10, h: 1, static: true}
     ];
 
     return (
         <div className="admin">
-          <ReactGridLayout margin={[25,25]} className="grid" layout={layout} cols={10} rowHeight={75} width={1000}>
-          <div key="Title"   className={label}>
-            City Name
+          <Logo admin={true}/>
+          <ReactGridLayout margin={[30, 30]} className="grid" layout={layout} cols={10} rowHeight={75} width={1000}>
+          <div key="Title"  className={title}>
+            <h2>Ferguson, MO</h2>
           </div>
             <div key="Stats"   className={statsColor}>
               <h3 className={label}>STATS</h3>
             </div>
             <div key="Graph" className={graphColor}>
               <h3 className={label}>GRAPH</h3>
+              <Graph/>
             </div>
 
-            <div key="Twitter" className={twitter}><Widget0/></div>
+            <div key="Twitter" className={twitter}><Twitter/></div>
 
             <div key="Map"   className={mapColor}>
               <h3 className={label}>MAP</h3>
