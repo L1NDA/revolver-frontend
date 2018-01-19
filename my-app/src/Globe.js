@@ -148,7 +148,7 @@ DAT.Globe = function(container, opts) {
 
     document.addEventListener('keydown', onDocumentKeyDown, false);
 
-    // window.addEventListener('resize', onWindowResize, false);
+    window.addEventListener('resize', onWindowResize, false);
 
     container.addEventListener('mouseover', function() {
       overRenderer = true;
@@ -342,11 +342,12 @@ DAT.Globe = function(container, opts) {
     }
   }
 
-  // function onWindowResize( event ) {
-  //   camera.aspect = container.offsetWidth / container.offsetHeight;
-  //   camera.updateProjectionMatrix();
-  //   renderer.setSize( container.offsetWidth, container.offsetHeight );
-  // }
+  function onWindowResize( event ) {
+    camera.aspect = container.offsetWidth / container.offsetHeight;
+    // camera.updateProjectionMatrix();
+    // renderer.setSize( container.offsetWidth, container.offsetHeight );
+    // this.render();
+  }
 
 //TODO
 
