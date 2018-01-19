@@ -64,6 +64,19 @@ body {
   font-size: 18px;
 }
 
+.statscoloring h4 {
+  font-weight: 100;
+  font-size: 11px;
+  padding-left: 15px;
+  line-height: 18px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.statscoloring h3 {
+  margin: 20px 0 5px 0 ;
+}
+
 .polar {
   /* padding: 1px; */
 }
@@ -113,6 +126,14 @@ body {
   color: #A8ABFF;
   box-shadow: 0px 3px 19px 0px rgba(168,171,255, 0.5);
   transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reportcoloring h3 {
+  text-align: center;
+  line-height: 30px;
 }
 
 .reportcoloring:hover {
@@ -136,11 +157,25 @@ body {
   padding: 0 35px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .titleAndSearch:hover {
   background-color: rgba(225,225,225, 0.1);
   cursor: pointer;
+}
+
+.search {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  width: 200px;
+  letter-spacing: 1px;
+}
+
+.search:focus {
+  outline: none;
 }
 
 .titleOverlay {
