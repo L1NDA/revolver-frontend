@@ -17,6 +17,9 @@ import Logo from "./Logo.js"
 import Graph from "./Graph.js"
 import Map from "./Map.js";
 // import gif from "./img/hacker-35.gif";
+import FontAwesome from "react-fontawesome";
+// import 'font-awesome/css/font-awesome.css'
+import searchImg from "./img/search.png"
 
 class Admin extends Component {
   constructor (props) {
@@ -77,17 +80,21 @@ class Admin extends Component {
           <Logo admin={true}/>
           <ReactGridLayout margin={[30, 30]} className="grid" layout={layout} cols={10} rowHeight={75} width={1000}>
           <div key="Title"  className={title}>
-            <h2>Ferguson, MO</h2>
-            <input type="text" name="name" placeholder="SEARCH" className="search"/>
+            <h2>Vancouver, BC Canada</h2>
+            <div className="img-container">
+              <input type="text" name="name" placeholder="SEARCH LOCATION" className="search"/>
+              <img src={searchImg} className="search-img"></img>
+            </div>
+
           </div>
             <div key="Stats"   className={statsColor}>
               <h3 className={label}>STATS</h3>
-              <h4><b>9</b> people have confirmed a riot.<br></br>
-                  <b>80%</b> certainty.<br></br>
-                  <b>4,051</b> upset tweets.<br></br>
-                  <b>352</b> angry tweets.<br></br>
-                  <b>1,200</b> tweets inciting action.<br></br>
-                  <b>68</b> violent tweets.<br></br></h4>
+              <h4><b>7</b> people have confirmed a violent event.<br></br>
+                  <b>71%</b> certainty.<br></br>
+                  <b>3,641</b> upset tweets.<br></br>
+                  <b>241</b> angry tweets.<br></br>
+                  <b>927</b> tweets inciting action.<br></br>
+                  <b>78</b> violent tweets.<br></br></h4>
             </div>
             <div key="Graph" className={graphColor}>
               <h3 className={label}>GRAPH</h3>
@@ -118,3 +125,5 @@ export default Admin;
 //   <Widget colspan={2} color="green"/>
 //   <Widget />
 // </div>
+
+// <FontAwesome name="rocket" className="searchIcon"/>

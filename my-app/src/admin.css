@@ -67,11 +67,12 @@ body {
 
 .statscoloring h4 {
   font-weight: 100;
-  font-size: 11px;
-  padding-left: 15px;
-  line-height: 18px;
-  margin-top: 10px;
+  font-size: 12px;
+  /* padding-left: 15px; */
+  line-height: 20px;
+  margin-top: 20px;
   margin-bottom: 0;
+  letter-spacing: 0.5px;
 }
 
 .statscoloring h3 {
@@ -176,17 +177,40 @@ body {
   background-color: transparent;
   color: white;
   padding: 10px 15px;
-  width: 200px;
+  width: 250px;
   letter-spacing: 1px;
+  border-radius: 5px;
 }
 
 .search:focus {
   outline: none;
 }
 
-.search:hover {
+.search-img {
+  height: 20px;
+  object-fit: contain;
+  padding-left: 15px;
+}
+
+.search-img:hover {
   /* box-shadow: 0px 3px 19px 0px rgba(168,171,255, 0.5); */
-  background-color: rgba(225,225,225, 0.1);
+  /* background-color: rgba(168,171,255, 0.1); */
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchIcon {
+  color: white;
+  width: 50px;
+  height: 50px;
+  z-index: 50;
 }
 
 .titleOverlay {

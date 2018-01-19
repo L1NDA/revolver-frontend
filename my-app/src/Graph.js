@@ -15,7 +15,7 @@ class Graph extends Component {
   }
 
   getState = () => ({
-    labels: ['August 9', 'August 10', 'August 11', 'August 12', 'August 13', 'August 14'],
+    labels: ['5pm', '6pm', '7pm', '8pm', '9pm', '10pm', "11pm"],
     datasets: [
       {
         label: 'Negative',
@@ -36,7 +36,7 @@ class Graph extends Component {
         pointHoverBorderWidth: 2,
         pointRadius: 2,
         pointHitRadius: 10,
-        data: [this.getRandomInt(0, 25), this.getRandomInt(0, 25), this.getRandomInt(30, 60), this.getRandomInt(50, 75), this.getRandomInt(75, 100), this.getRandomInt(75, 100)]
+        data: [this.getRandomInt(0, 25), this.getRandomInt(0, 25), this.getRandomInt(30, 50), this.getRandomInt(50, 75), this.getRandomInt(75, 100), this.getRandomInt(75, 100), this.getRandomInt(85, 100)]
       },
       {
         label: 'Neutral',
@@ -57,7 +57,7 @@ class Graph extends Component {
         pointHoverBorderWidth: 2,
         pointRadius: 2,
         pointHitRadius: 10,
-        data: [this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60)]
+        data: [this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60)]
       },
       {
         label: 'Positive',
@@ -78,7 +78,7 @@ class Graph extends Component {
         pointHoverBorderWidth: 2,
         pointRadius: 2,
         pointHitRadius: 10,
-        data: [this.getRandomInt(40, 60), this.getRandomInt(30, 50), this.getRandomInt(20, 40), this.getRandomInt(20, 40), this.getRandomInt(10, 30), this.getRandomInt(0, 20)]
+        data: [this.getRandomInt(40, 60), this.getRandomInt(30, 50), this.getRandomInt(20, 40), this.getRandomInt(20, 30), this.getRandomInt(0, 20), this.getRandomInt(0, 10), this.getRandomInt(0, 20)]
       }
     ]
   });
