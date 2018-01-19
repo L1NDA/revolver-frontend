@@ -157,11 +157,25 @@ body {
   padding: 0 35px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .titleAndSearch:hover {
   background-color: rgba(225,225,225, 0.1);
   cursor: pointer;
+}
+
+.search {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  width: 200px;
+  letter-spacing: 1px;
+}
+
+.search:focus {
+  outline: none;
 }
 
 .titleOverlay {

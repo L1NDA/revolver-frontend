@@ -79,6 +79,7 @@ class Admin extends Component {
           <ReactGridLayout margin={[30, 30]} className="grid" layout={layout} cols={10} rowHeight={75} width={1000}>
           <div key="Title"  className={title}>
             <h2>Ferguson, MO</h2>
+            <input type="text" name="name" placeholder="SEARCH" className="search"/>
           </div>
             <div key="Stats"   className={statsColor}>
               <h3 className={label}>STATS</h3>
