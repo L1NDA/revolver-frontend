@@ -15,14 +15,14 @@ class Graph extends Component {
   }
 
   getState = () => ({
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ['August 9', 'August 10', 'August 11', 'August 12', 'August 13', 'August 14'],
     datasets: [
       {
-        label: 'Volume of Tweets',
+        label: 'Negative',
         fill: false,
         lineTension: 0.1,
         backgroundColor: 'rgba(75,192,192,0.4)',
-        borderColor: 'rgba(75,192,192,1)',
+        borderColor: '#A8ABFF',
         borderCapStyle: 'butt',
         borderDash: [],
         borderDashOffset: 0.0,
@@ -31,12 +31,54 @@ class Graph extends Component {
         pointBackgroundColor: 'white',
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+        pointHoverBackgroundColor: '#A8ABFF',
         pointHoverBorderColor: 'rgba(220,220,220,1)',
         pointHoverBorderWidth: 2,
-        pointRadius: 1,
+        pointRadius: 2,
         pointHitRadius: 10,
-        data: [65, 59, 80, 81, 56, 55, 40]
+        data: [this.getRandomInt(0, 25), this.getRandomInt(0, 25), this.getRandomInt(30, 60), this.getRandomInt(50, 75), this.getRandomInt(75, 100), this.getRandomInt(75, 100)]
+      },
+      {
+        label: 'Neutral',
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: 'rgba(75,192,192,0.4)',
+        borderColor: '#69BFFF',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: 'white',
+        pointBackgroundColor: 'white',
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: '#69BFFF',
+        pointHoverBorderColor: 'rgba(220,220,220,1)',
+        pointHoverBorderWidth: 2,
+        pointRadius: 2,
+        pointHitRadius: 10,
+        data: [this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60), this.getRandomInt(40, 60)]
+      },
+      {
+        label: 'Positive',
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: 'rgba(75,192,192,0.4)',
+        borderColor: "#43F7DD",
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: 'white',
+        pointBackgroundColor: 'white',
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: '#43F7DD',
+        pointHoverBorderColor: 'rgba(220,220,220,1)',
+        pointHoverBorderWidth: 2,
+        pointRadius: 2,
+        pointHitRadius: 10,
+        data: [this.getRandomInt(40, 60), this.getRandomInt(30, 50), this.getRandomInt(20, 40), this.getRandomInt(20, 40), this.getRandomInt(10, 30), this.getRandomInt(0, 20)]
       }
     ]
   });
@@ -48,7 +90,7 @@ class Graph extends Component {
 	componentWillMount() {
 		setInterval(() => {
 			this.setState(this.getState());
-		}, 5000);
+		}, 3000);
 	}
 
   render () {
@@ -57,6 +99,16 @@ class Graph extends Component {
         maintainAspectRatio: false,
         responsive: true,
         layout: {padding: {bottom: 95, top: 10, left: 20, right: 40}, position: "chartArea", height: "300"},
+        scales: {
+          xAxes: [{
+            gridLines: {color: "white", lineWidth: 0.25},
+            ticks: {fontColor: "white", fontFamily: "Proxima Nova", backdropColor: "black"},
+          }],
+          yAxes: [{
+            gridLines: {color: "white", lineWidth: 0.25},
+            ticks: {fontColor: "white", fontFamily: "Proxima Nova", backdropColor: "black"},
+          }],
+        },
     }
 
     const grid = {
