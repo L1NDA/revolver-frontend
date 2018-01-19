@@ -133,7 +133,8 @@ body {
 
 .reportcoloring h3 {
   text-align: center;
-  line-height: 30px;
+  line-height: 22px;
+  font-size: 16px;
 }
 
 .reportcoloring:hover {
@@ -161,8 +162,8 @@ body {
 }
 
 .titleAndSearch:hover {
-  background-color: rgba(225,225,225, 0.1);
-  cursor: pointer;
+  /* background-color: rgba(225,225,225, 0.1); */
+  /* cursor: pointer; */
 }
 
 .search {
@@ -176,6 +177,11 @@ body {
 
 .search:focus {
   outline: none;
+}
+
+.search:hover {
+  /* box-shadow: 0px 3px 19px 0px rgba(168,171,255, 0.5); */
+  background-color: rgba(225,225,225, 0.1);
 }
 
 .titleOverlay {
