@@ -15,7 +15,6 @@ import "./css/react-resizable-styles.css";
 // import Globe from './Globe.js'
 import ScrollManager from 'window-scroll-manager'
 
-
 class App extends Component {
 
   constructor (props) {

@@ -16,7 +16,7 @@ import "./css/react-resizable-styles.css";
 import Donut from "./Donut.js";
 import Logo from "./Logo.js"
 import Graph from "./Graph.js"
-// import Map from "./Map.js";
+import Map from "./Map.js";
 // import gif from "./img/hacker-35.gif";
 
 class Admin extends Component {
@@ -99,6 +99,7 @@ class Admin extends Component {
 
             <div key="Map"   className={mapColor}>
               <h3 className={label}>MAP</h3>
+              <Map />
             </div>
             <div key="Polar"   className={polar}>
               <Donut/>
