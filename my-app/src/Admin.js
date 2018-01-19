@@ -67,7 +67,7 @@ class Admin extends Component {
 
     return (
         <div className="admin">
-          <ReactGridLayout margin={[25,25]} className="grid" layout={layout} cols={10} rowHeight={75} width={1000}>
+          <ReactGridLayout margin={[30, 30]} className="grid" layout={layout} cols={10} rowHeight={75} width={1000}>
           <div key="Title"   className={title}>
             City Name
           </div>
