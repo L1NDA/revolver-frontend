@@ -42,7 +42,7 @@ class Donut extends Component {
 	componentWillMount() {
 		setInterval(() => {
 			this.setState(this.getState());
-		}, 3000);
+		}, 2000);
 	}
 
   render () {

@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import ReactDOM from 'react-dom'
 import './App.css';
 import Form from './Form.js';
+import About from './AboutPage.js'
 // import Home from './Home.js';
 import Admin from './Admin.js';
 import {
@@ -20,6 +21,15 @@ class App extends Component {
   constructor (props) {
     super(props);
     const sm = new ScrollManager()
+    this.state = {
+      showPopup: false
+    }
+  }
+    togglePopup() {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+
   }
 
   // state = {
@@ -49,6 +59,15 @@ class App extends Component {
             <Route path="/admin" component={Admin}/>
           </Switch>
         </Router>
+        <div className="aboutDiv" onClick={this.togglePopup.bind(this)}>
+        <a href="#">ABOUT</a>
+        {this.state.showPopup ?
+          <About
+            closePopup={this.togglePopup.bind(this)}
+          />
+          : null
+        }
+        </div>
       </div>
     );
   }

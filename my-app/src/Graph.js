@@ -6,7 +6,7 @@ class Graph extends Component {
   constructor (props) {
     super(props);
     this.state = {
-
+      current: "#ferguson"
     }
   }
 
@@ -83,6 +83,13 @@ class Graph extends Component {
     ]
   });
 
+  // getName() {
+  //   var hashtags = ["#michaelbrown", "#policebrutality", "#blacklivesmatter", "#wrongfulkilling", "#handsupdontshoot", "#stoppoliceviolence", "#humanrights", "#mikebrown"];
+  //   this.state.current = hashtags[this.getRandomInt(0,7)];
+  //   // console.log(current);
+  //   // return current;
+  // }
+
   getInitialState() {
 		return this.getState();
 	}
@@ -90,11 +97,25 @@ class Graph extends Component {
 	componentWillMount() {
 		setInterval(() => {
 			this.setState(this.getState());
-		}, 3000);
+		}, 2000);
+    // setInterval(() => {
+		// 	this.setState(this.getName());
+		// }, 2000);
 	}
 
   render () {
     const options = {
+      title: {
+        display: false,
+        text: this.state.current,
+        fontColor: "white",
+        fontSize: 16,
+        position: "top",
+        textAlign: "right",
+        fontFamily: "Proxima Nova",
+        fontStyle: 100,
+        letterSpacing: "2px"
+      },
         legend: {display: false},
         maintainAspectRatio: false,
         responsive: true,
