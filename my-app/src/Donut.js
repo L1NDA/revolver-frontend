@@ -51,7 +51,6 @@ class Donut extends Component {
         scales: { xAxes: [{ display: false, }], yAxes: [{ display: false, }], },
         maintainAspectRatio: false,
         elements: {arc: {borderColor: "black", borderWidth: "3"}},
-        // gridLines: {color: "white"}
         scale: {
           gridLines: {color: "#43F7DD"},
           ticks: {fontColor: "#43F7DD", fontFamily: "Proxima Nova", backdropColor: "black"},
