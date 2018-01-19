@@ -10,6 +10,7 @@ import {
   Switch
 } from 'react-router-dom';
 import Admin from "./Admin.js";
+import Logo from "./Logo.js"
 
 class Form extends Component {
   constructor (props) {
@@ -107,6 +108,7 @@ class Form extends Component {
     return (
       <Router>
         <switch>
+          <Logo/>
           <div>
             <form className="form" noValidate>
               <input type="email" required className={emailClasses} name="email" placeholder="EMAIL" onKeyPress={this.handleKeyPress}  />

@@ -14,6 +14,9 @@ import ReactGridLayout from "react-grid-layout";
 import "./css/react-grid-layout-styles.css";
 import "./css/react-resizable-styles.css";
 import Donut from "./Donut.js";
+import Logo from "./Logo.js"
+// import Map from "./Map.js";
+// import gif from "./img/hacker-35.gif";
 
 class Admin extends Component {
   constructor (props) {
@@ -48,7 +51,6 @@ class Admin extends Component {
     var title = classNames ({
       widget: true,
       titleAndSearch: true,
-      widgetnopad: true
     })
     var polar = classNames ({
       widget: true,
@@ -67,9 +69,10 @@ class Admin extends Component {
 
     return (
         <div className="admin">
+          <Logo admin={true}/>
           <ReactGridLayout margin={[30, 30]} className="grid" layout={layout} cols={10} rowHeight={75} width={1000}>
-          <div key="Title"   className={title}>
-            City Name
+          <div key="Title"  className={title}>
+            <h2>Ferguson, MO</h2>
           </div>
             <div key="Stats"   className={statsColor}>
               <h3>STATS</h3>
@@ -82,6 +85,7 @@ class Admin extends Component {
 
             <div key="Map"   className={mapColor}>
               <h3>MAP</h3>
+
             </div>
             <div key="Polar"   className={polar}>
               <Donut/>

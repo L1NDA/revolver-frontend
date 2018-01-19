@@ -16,23 +16,23 @@ class Donut extends Component {
 
   getState = () => ({
       labels: [
-        'Red',
-        'Green',
-        'Yellow'
+        'Negative',
+        'Neutral',
+        'Positive'
       ],
       datasets: [{
-        data: [this.getRandomInt(50, 200), this.getRandomInt(100, 150), this.getRandomInt(150, 250)],
+        data: [this.getRandomInt(75, 100), this.getRandomInt(25, 75), this.getRandomInt(0, 25)],
         backgroundColor: [
-        '#CCC',
-        '#36A2EB',
-        '#FFCE56'
+        '#A8ABFF',
+        '#69BFFF',
+        '#43F7DD',
         ],
         hoverBackgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56'
+        '#BA3239',
+        '#636363',
+        '#5BAB4B'
         ]
-      }]
+      }],
   });
 
   getInitialState() {
@@ -50,11 +50,11 @@ class Donut extends Component {
         legend: {display: false},
         scales: { xAxes: [{ display: false, }], yAxes: [{ display: false, }], },
         maintainAspectRatio: false,
-        elements: {arc: {borderColor: "white"}},
+        elements: {arc: {borderColor: "black", borderWidth: "3"}},
         // gridLines: {color: "white"}
         scale: {
-          gridLines: {color: "white"},
-          ticks: {fontColor: "white", fontFamily: "Proxima Nova", backdropColor: "black"},
+          gridLines: {color: "#43F7DD"},
+          ticks: {fontColor: "#43F7DD", fontFamily: "Proxima Nova", backdropColor: "black"},
         },
         layout: {padding: 1, position: "chartArea"}
     }

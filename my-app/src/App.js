@@ -1,6 +1,5 @@
 import React, { Component }  from 'react';
 import ReactDOM from 'react-dom'
-import Logo from "./Logo.js";
 import './App.css';
 import Form from './Form.js';
 // import Home from './Home.js';
@@ -14,8 +13,15 @@ import {
 import "./css/react-grid-layout-styles.css";
 import "./css/react-resizable-styles.css";
 // import Globe from './Globe.js'
+import ScrollManager from 'window-scroll-manager'
+
 
 class App extends Component {
+
+  constructor (props) {
+    super(props);
+    const sm = new ScrollManager()
+  }
 
   // state = {
   //   isTop: true,
@@ -31,22 +37,13 @@ class App extends Component {
   //   });
   // }
 
-  _handleScroll(ev) {
-        console.log("Scrolling!");
-    }
-    componentDidMount() {
-        const page = ReactDOM.findDOMNode(this.refs.page)
-        page.addEventListener('scroll', this._handleScroll);
-    }
-    componentWillUnmount() {
-        const page = ReactDOM.findDOMNode(this.refs.page)
-        page.removeEventListener('scroll', this._handleScroll);
-    }
-
   render() {
+    window.addEventListener('window-scroll', function(e) {
+      console.log('Scroll position is: ' + e.detail.scrollPosition);
+    });
+
     return (
-      <div className="homepage" ref="page">
-        <Logo/>
+      <div className="homepage">
         <Router>
           <Switch>
             <Route path="/" exact component={Form}/>
