@@ -3,7 +3,7 @@ import { FormErrors } from './FormErrors';
 import classNames from "classnames";
 import "./admin.css";
 import Widget from "./Widgets.jsx";
-import Widget0 from "./Widgets0.jsx";
+import Twitter from "./Twitter.jsx";
 import donutexample from "./img/donutexample.png"
 import {
   BrowserRouter as Router,
@@ -30,7 +30,8 @@ class Admin extends Component {
     })
     var twitter = classNames ({
       widget: true,
-      transparent: true
+      twittercoloring: true,
+      widgetnopad: true
     })
     var graphColor = classNames ({
       widget: true,
@@ -46,7 +47,8 @@ class Admin extends Component {
     })
     var title = classNames ({
       widget: true,
-      titleAndSearch: true
+      titleAndSearch: true,
+      widgetnopad: true
     })
     var polar = classNames ({
       widget: true,
@@ -54,12 +56,12 @@ class Admin extends Component {
     })
 
     var layout = [
-      {i: 'Graph', x: 0, y: 4, w: 7, h: 3, minW: 2, minH: 2},
-      {i: 'Stats', x: 7, y: 0, w: 3, h: 2, minW: 2, minH: 2},
-      {i: 'Twitter', x: 7, y: 3, w: 3, h: 5, minW: 3, minH: 5, maxW: 3, maxH: 5},
-      {i: 'Map', x: 2, y: 0, w: 5, h: 4, minW: 4, minH: 4},
-      {i: 'Polar', x: 0, y: 2, w: 2, h: 2, minW: 2, minH: 2},
-      {i: 'Report', x: 0, y: 0, w: 2, h: 2, minW: 2, minH: 2},
+      {i: 'Graph', x: 3, y: 5, w: 7, h: 3, minW: 2, minH: 2},
+      {i: 'Stats', x: 0, y: 0, w: 3, h: 2, minW: 2, minH: 2},
+      {i: 'Twitter', x: 0, y: 3, w: 3, h: 5, minW: 3, minH: 5, maxW: 3, maxH: 5},
+      {i: 'Map', x: 3, y: 0, w: 5, h: 4, minW: 4, minH: 4},
+      {i: 'Polar', x: 8, y: 0, w: 2, h: 2, minW: 2, minH: 2},
+      {i: 'Report', x: 8, y: 2, w: 2, h: 2, minW: 2, minH: 2},
       {i: 'Title', x: 0, y: 0, w: 10, h: 1, static: true}
     ];
 
@@ -76,7 +78,7 @@ class Admin extends Component {
               <h3>GRAPH</h3>
             </div>
 
-            <div key="Twitter" className={twitter}><Widget0/></div>
+            <div key="Twitter" className={twitter}><Twitter/></div>
 
             <div key="Map"   className={mapColor}>
               <h3>MAP</h3>

@@ -56,7 +56,7 @@ class Donut extends Component {
           gridLines: {color: "white"},
           ticks: {fontColor: "white", fontFamily: "Proxima Nova", backdropColor: "black"},
         },
-        layout: {padding: 10}
+        layout: {position: "chartArea"}
     }
 
     const grid = {
