@@ -59,7 +59,7 @@ class Twitter extends Component {
     }}
     options={{
       theme: "dark",
-      height: '500px'
+      height: '400px'
 
     }}
     onLoad={() => console.log('Timeline is loaded!')}
