@@ -16,3 +16,19 @@ html, body {
   padding: 0;
   margin: 0;
 }
+.aboutPage{
+  position: absolute;
+  left: 370px;
+  top: 300px;
+  background-color: darkgray;
+  color: white;
+  font-family: 'Proxima Nova', sans-serif;
+  width: 600px;
+  padding: 10px;
+}
+.aboutPage h3{
+  text-align: center;
+}
+.closeDiv{
+  text-align: center;
+}

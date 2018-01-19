@@ -23,7 +23,7 @@ body {
 }
 
 .hacker {
-  position: obsolute;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
@@ -159,6 +159,7 @@ body {
 
 .hidden::placeholder {
   color: #333;
+
 }
 
 .disabled {
@@ -166,4 +167,14 @@ body {
   filter: brightness(0.5);
   pointer-events: none;
   transition: all 0.5s;
+}
+
+.aboutDiv a{
+  color: white;
+  text-decoration: none;
+    font-family: 'Proxima Nova', sans-serif;
+    letter-spacing: 3px;
+    position: absolute;
+    bottom: 25px;
+    right: 40px;
 }
